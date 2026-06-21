@@ -50,3 +50,22 @@ darkModeBtn.addEventListener("click", () => {
     }
 
 });
+fetch("https://jsonplaceholder.typicode.com/users/1")
+.then(response => response.json())
+.then(data => {
+
+    document.getElementById("apiData").innerHTML = `
+        <h3>${data.name}</h3>
+        <p>Email: ${data.email}</p>
+        <p>Phone: ${data.phone}</p>
+    `;
+
+})
+.catch(error => {
+
+    document.getElementById("apiData").innerHTML =
+    "Failed to load data";
+
+    console.log(error);
+
+});
