@@ -1,3 +1,6 @@
+if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark-mode");
+}
 const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", function(e) {
@@ -32,4 +35,18 @@ form.addEventListener("submit", function(e) {
     }
 
     success.innerText = "Form submitted successfully!";
+});
+const darkModeBtn =
+document.getElementById("darkModeBtn");
+
+darkModeBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+
 });
