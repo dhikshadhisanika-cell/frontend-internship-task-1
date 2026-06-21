@@ -70,3 +70,12 @@ footer{
         width: 80%;
     }
 }
+#error{
+    color:red;
+    margin-top:10px;
+}
+
+#success{
+    color:green;
+    margin-top:10px;
+}
