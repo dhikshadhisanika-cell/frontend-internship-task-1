@@ -107,3 +107,8 @@ footer{
     margin: 20px auto;
     width: 300px;
 }
+#loading{
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+}

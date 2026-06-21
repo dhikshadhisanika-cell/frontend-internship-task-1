@@ -50,10 +50,14 @@ darkModeBtn.addEventListener("click", () => {
     }
 
 });
+const loading = document.getElementById("loading");
+const apiError = document.getElementById("apiError");
+
+loading.innerText = "Loading...";
 fetch("https://jsonplaceholder.typicode.com/users/1")
 .then(response => response.json())
 .then(data => {
-
+loading.innerText = "";
     document.getElementById("apiData").innerHTML = `
         <h3>${data.name}</h3>
         <p>Email: ${data.email}</p>
@@ -62,10 +66,11 @@ fetch("https://jsonplaceholder.typicode.com/users/1")
 
 })
 .catch(error => {
-
-    document.getElementById("apiData").innerHTML =
-    "Failed to load data";
+  
+    apiError.innerText = "Failed to load user data";
 
     console.log(error);
 
 });
+
+   
